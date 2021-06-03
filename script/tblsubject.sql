@@ -1,0 +1,19 @@
+USE SIS
+
+
+GO
+
+IF OBJECT_ID('subject') IS NULL
+BEGIN
+	CREATE TABLE subject(
+		Subject_ID INT IDENTITY(1, 1) NOT NULL,
+		Course_ID INT NOT NULL,
+		[Subject] VARCHAR(200) NOT NULL,
+		Code VARCHAR(200) NOT NULL,
+		[Description] VARCHAR(200)
+		CONSTRAINT [PK_subject] PRIMARY KEY(Subject_ID)
+	)
+END
+
+
+GO

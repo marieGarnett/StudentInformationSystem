@@ -1,0 +1,24 @@
+USE SIS
+
+
+GO
+
+
+IF OBJECT_ID('fnCountAdmissions') IS NOT NULL DROP FUNCTION [fnCountAdmissions]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE FUNCTION fnCountAdmissions()
+RETURNS INT
+AS
+
+BEGIN
+
+	RETURN (SELECT COUNT(Admission_ID)FROM admission WHERE IsEnrolled = IsEnrolled)
+
+END
+
+GO
+
